@@ -73,7 +73,7 @@ export const NavSearch = styled.input.attrs({
   }
 
   &.my-node-exit {
-	transition: all 1s ease-out;
+    transition: all 1s ease-out;
   }
 
   &.my-node-exit-active {
@@ -84,7 +84,7 @@ export const NavSearch = styled.input.attrs({
 export const SearchWrapper = styled.div`
   position: relative;
   float: left;
-  .zoom {   
+  .zoom {
     position: absolute;
     right: 5px;
     bottom: 5px;
@@ -106,7 +106,7 @@ export const SearchInfoSan = styled.div`
   width: 0;
   height: 0;
   border: 15px solid;
-  border-color: transparent transparent #FDFDFD;
+  border-color: transparent transparent #fdfdfd;
 `;
 
 export const SearchInfo = styled.div`
@@ -116,6 +116,7 @@ export const SearchInfo = styled.div`
   width: 240px;
   padding: 0 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
 `;
 
 export const SearchInfoTitle = styled.div`
@@ -123,27 +124,26 @@ export const SearchInfoTitle = styled.div`
   margin-bottom: 15px;
   line-height: 20px;
   font-size: 14px;
-  color:#969696;
+  color: #969696;
 `;
 
 export const SearchInfoSwitch = styled.span`
   float: right;
   font-size: 13px;
   cursor: pointer;
-  .huang:hover{
+  .huang:hover {
     font-weight: bold;
     color: #787878;
   }
   .spin {
     display: block;
     float: left;
-    font-size:13px;
+    font-size: 13px;
     padding-top: 1px;
     margin-right: 4px;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
     transform-origin: center center;
   }
-  
 `;
 
 export const SearchInfoList = styled.span`
@@ -162,11 +162,10 @@ export const SearchInfoItem = styled.a`
   color: #787878;
   border-radius: 3px;
   cursor: pointer;
-  &:hover{
+  &:hover {
     font-weight: bold;
   }
-  
-`
+`;
 
 export const Addition = styled.div`
   position: absolute;

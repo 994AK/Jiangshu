@@ -1,0 +1,1 @@
+export const MOUSE_ENTER = "mouse_enter";//鼠标移动热门搜索框中
