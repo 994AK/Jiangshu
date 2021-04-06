@@ -37,7 +37,7 @@ const mapDispathToProps = (dispatch) => {
     return {
         //对焦触发
         handleInputFocus(list) {
-            //发送请求
+            //如果当前size为0 就需要请求
             (list.size === 0 ) && dispatch(action.getList());
             dispatch(action.getInputSearchFocus());
         },
