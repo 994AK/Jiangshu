@@ -118,7 +118,6 @@ const Header = (props) => {
     } = props
 
     return (
-
         <HeaderWrapper>
             <Logo/>
             <Nav>
@@ -142,7 +141,6 @@ const Header = (props) => {
                     {
                         GetListArea(props)
                     }
-
                 </SearchWrapper>
             </Nav>
             <Addition>
