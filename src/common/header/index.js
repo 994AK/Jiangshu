@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
 // 映射action dispacth
 const mapDispathToProps = (dispatch) => {
     return {
-        //对焦触发
+        //对焦触发的
         handleInputFocus(list) {
             //如果当前size为0 就需要请求
             (list.size === 0 ) && dispatch(action.getList());
