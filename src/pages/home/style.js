@@ -81,6 +81,18 @@ export const ListInfo = styled.div`
   }
 `;
 
+export const LoadMore = styled.div`
+  width: 100%;
+  height:40px;
+  line-height:40px;
+  margin:30px 0;
+  background-color: #a5a5a5;
+  text-align:center;
+  border-radius:20;
+  color: #fff;
+  cursor: pointer;
+`
+
 export const RecommendItem = styled.div`
   position: relative;
   margin-top: 27px;
@@ -107,7 +119,7 @@ export const RecommendCode = styled.a`
   border-radius: 6px;
   background-color: #fff;
   cursor: pointer;
-  .qrcode {
+  .arcade {
     width: 64px;
     height: 64px;
     opacity: 0.85;
@@ -118,7 +130,7 @@ export const RecommendCode = styled.a`
     display: inline-block;
     vertical-align: middle;
     margin-left: 7px;
-    .tite {
+    .title {
       font-size: 15px;
       color: #333;
     }
@@ -135,13 +147,10 @@ export const RecommendQRCode = styled.div`
   left: 20%;
   border-radius: 6px;
   .detail_wrap {
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
     opacity: 0;
   }
   .active {
-    transition: all 0.5s ease-in;
     opacity: 1;
   }
 `;
-/* 三角形 */
-export const Recommendtriangle = styled.div``;

@@ -1,25 +1,37 @@
-/* 小组件 */
-import { List, Recommended, Topic, Writer } from "./components";
-/* CSS样式 */
-import { HomeWrapper, HomeLeft, HomeRight } from "./style";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { actionCreat } from "./store";
+import { List, Recommended, Topic, Writer } from "./components"; //组件化
+import { HomeWrapper, HomeLeft, HomeRight } from "./style"; //CSS
 
-function Home() {
+function Home(props) {
+  useEffect(() => {
+    props.changeHomeData(); //后台请求
+  }, [props]);
+
   return (
     <div>
       <HomeWrapper>
         <HomeLeft>
           {/* 背景图片 */}
-          <div className="banner-img" ></div>
+          <div className="banner-img"></div>
           <Topic />
           <List />
         </HomeLeft>
         <HomeRight>
-            <Recommended />
-            <Writer />
+          <Recommended />
+          <Writer />
         </HomeRight>
       </HomeWrapper>
     </div>
   );
 }
 
-export default Home;
+const mapDispatch = (dispatch) => ({
+  changeHomeData(){
+    const action = actionCreat.getHomeInfo();    
+    dispatch(action);
+  },
+});
+
+export default connect(null, mapDispatch)(Home);

@@ -1,9 +1,9 @@
 import reducer from "./reducer";
-import * as actionType from "./actionType";
-import * as action from './action'
+import * as action from './action'//同步action
+import * as actionCreat from "./actionCreat";
 
 export {
     reducer,
     action,
-    actionType
+    actionCreat,
 }

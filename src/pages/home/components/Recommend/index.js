@@ -4,27 +4,24 @@ import {
   RecommendCode,
   RecommendQRCode,
 } from "../../style";
-
+//action文件
+import { action } from "../../store";
 import { connect } from "react-redux";
 
 //鼠标运动二维码显示
-function RecommendMouse(QRCodemouseIn) {
-  console.log(QRCodemouseIn);
+function RecommendMouse(QRCokeIn) {
   return (
     <RecommendQRCode>
-      <div className={QRCodemouseIn ? "active" : "detail_wrap"}>
-        <img
-          src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-4130a7a6521701c4cb520ee6997d5fdb.png"
-          alt=""
-        />
+      <div className={QRCokeIn ? "active" : "detail_wrap"}>
+        <img src="//img-blog.csdnimg.cn/20210408100156265.png" alt="" />
       </div>
     </RecommendQRCode>
   );
 }
 
 function Recommended(props) {
-  const { handleQCMouseEnter, handleQCMouseLeave } = props;
-  const { list, QRCodemouseIn } = props;
+  const { handleQCMouseEnter, handleQCMouseLeave } = props; //事件
+  const { list,  QRCokeIn } = props; //参数
   return (
     <RecommendItem>
       {/* 图片标签 */}
@@ -40,7 +37,7 @@ function Recommended(props) {
       >
         <img
           alt=""
-          className="qrcode"
+          className="arcade"
           src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-4130a7a6521701c4cb520ee6997d5fdb.png"
         />
         <div className="info">
@@ -49,30 +46,23 @@ function Recommended(props) {
         </div>
       </RecommendCode>
       {/* 鼠标运动进去显示二维码 */}
-
-      {RecommendMouse(QRCodemouseIn)}
+      {RecommendMouse(QRCokeIn)}
     </RecommendItem>
   );
 }
 
 const mapState = (state) => ({
   list: state.getIn(["home", "RecommendList"]),
-  QRCodemouseIn: state.getIn(["home", "QRCodemouseIn"]),
+  QRCokeIn: state.getIn(["home", "QRCokeIn"]),
 });
 
 const mapDispatch = (dispatch) => {
   return {
     handleQCMouseEnter() {
-      const action = {
-        type: "qc_enter",
-      };
-      dispatch(action);
+      dispatch(action.getQcEnter());
     },
     handleQCMouseLeave() {
-      const action = {
-        type: "qc_leave",
-      };
-      dispatch(action);
+      dispatch(action.getQcLeave());
     },
   };
 };
