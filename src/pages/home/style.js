@@ -88,7 +88,7 @@ export const LoadMore = styled.div`
   margin:30px 0;
   background-color: #a5a5a5;
   text-align:center;
-  border-radius:20;
+  border-radius:20px;
   color: #fff;
   cursor: pointer;
 `
@@ -154,3 +154,17 @@ export const RecommendQRCode = styled.div`
     opacity: 1;
   }
 `;
+
+export const BackTop = styled.div`
+  position:fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 60px;
+  //height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: all 1s ease-in;
+`

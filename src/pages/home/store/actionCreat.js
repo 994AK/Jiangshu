@@ -9,9 +9,10 @@ const changeHomeData = (result) => ({
   topicList: result.topicList, //热点栏
 });
 
-const addHomeList = (list) => ({
+const addHomeList = (list,nextPage) => ({
   type: actionType.ADD_HOME_LIST,
   list:fromJS(list),
+  nextPage
 });
 
 export const getHomeInfo = () => {
@@ -24,12 +25,16 @@ export const getHomeInfo = () => {
   };
 };
 
-export const getMoreLink = () => {
+export const getMoreLink = (page) => {
   return (dispatch) => {
-    axios.get("/api/homeList.json").then((res) => {
+    axios.get("/api/homeList.json?page="+page).then((res) => {
       const result = res.data.data;
-      console.log(result);
-      dispatch(addHomeList(result));
+      dispatch(addHomeList(result,page+1));
     });
   };
 };
+
+export const toggleTopShow = (show) => ({
+  type: actionType.TOGGLE_SCROLL,
+  show
+})

@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import { actionCreat } from "../../store"; //异步的action
 
 function List(props) {
-  const { list, getMoreLink } = props;
+  const { list, page,getMoreLink } = props;
   return (  
     <div>
-      {list.map((item) => (
-        <ListItem key={item.get("id")}>
+      {list.map((item,index) => (
+        <ListItem key={index}>
           <img className="pic" src={item.get("imgUrl")} alt="" />
           <ListInfo>
             <h3 className="title">{item.get("title")}</h3>
@@ -16,17 +16,18 @@ function List(props) {
           </ListInfo>
         </ListItem>
       ))}
-      <LoadMore onClick={getMoreLink}>更多文字</LoadMore>
+      <LoadMore onClick={()=>getMoreLink(page)}>更多文字</LoadMore>
     </div>
   );
 }
 
 const mapState = (state) => ({
   list: state.getIn(["home", "articleList"]),
+  page: state.getIn(["home","articlePage"])
 });
 const mapDispatch = (dispatch) => ({
-  getMoreLink() {
-    dispatch(actionCreat.getMoreLink());
+  getMoreLink(page) {
+    dispatch(actionCreat.getMoreLink(page));
   },
 });
 
